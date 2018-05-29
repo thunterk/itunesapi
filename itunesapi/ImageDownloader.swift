@@ -44,4 +44,8 @@ class ImageCache: NSObject {
     class func save(_ image: UIImage, forKey key: String) {
         cache.setObject(image, forKey: key as NSString)
     }
+    
+    class func clear() {
+        cache.removeAllObjects()
+    }
 }

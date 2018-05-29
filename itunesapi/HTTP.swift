@@ -14,6 +14,8 @@ class HTTP: NSObject {
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             handler(data, error)
         }
+        
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         task.resume()
     }
     

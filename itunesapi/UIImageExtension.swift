@@ -11,7 +11,9 @@ import UIKit
 extension UIImageView {
     func load(urlString: String) {
         ImageDownloader.load(urlString: urlString) { [weak self] (image) in
-            self?.image = image
+            DispatchQueue.main.async {
+                self?.image = image
+            }
         }
     }
     
