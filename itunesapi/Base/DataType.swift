@@ -24,17 +24,6 @@ struct FeedData: Codable {
 struct ListData: Codable {
     var title: ImData
     var entry: [EntryData]
-    
-    enum CodingKeys: String, CodingKey {
-        case title, entry
-    }
-    
-//    init(from decoder: Decoder) throws {
-//        let values = try decoder.container(keyedBy: CodingKeys.self)
-//        title = try values.decode(ImData.self, forKey: .title)
-//        entry = try values.decode([EntryData].self, forKey: .entry)
-//    }
-    
 }
 
 struct EntryData: Codable {
@@ -64,4 +53,43 @@ struct ImData: Codable {
         label = (try? values.decode(String.self, forKey: .label)) ?? ""
         attributes = try? values.decode([String: String].self, forKey: .attributes)
     }
+}
+
+
+struct DetailData: Codable {
+    var resultCount: Int
+    var results: [AppData]
+    
+    static func parse(_ data: Data) -> AppData? {
+        do {
+            let detail = try JSONDecoder().decode(DetailData.self, from: data)
+            
+            guard detail.resultCount == detail.results.count && detail.resultCount > 0 else {
+                return nil
+            }
+            
+            return detail.results[0]
+        } catch {
+            return nil
+        }
+    }
+}
+
+struct AppData: Codable {
+    var screenshotUrls: [String]
+    var description: String
+    var averageUserRating: Float
+    var userRatingCount: Int
+    
+    var releaseNotes: String?
+    var trackName: String
+    var trackContentRating: String
+    var genres: [String]
+    
+    var fileSizeBytes: String
+    var sellerUrl: String?
+    var contentAdvisoryRating: String
+    var sellerName: String
+    var minimumOsVersion: String
+    var artistName: String
 }

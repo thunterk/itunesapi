@@ -12,7 +12,6 @@
 		E30380A620BD3D7A00F5E545 /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30380A520BD3D7A00F5E545 /* DataType.swift */; };
 		E30380AA20BD5A3600F5E545 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30380A920BD5A3600F5E545 /* DetailTableViewController.swift */; };
 		E3524A2F20B9A571009CE1AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3524A2E20B9A571009CE1AB /* AppDelegate.swift */; };
-		E3524A3120B9A571009CE1AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3524A3020B9A571009CE1AB /* ViewController.swift */; };
 		E3524A3420B9A571009CE1AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3524A3220B9A571009CE1AB /* Main.storyboard */; };
 		E3524A3620B9A572009CE1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3524A3520B9A572009CE1AB /* Assets.xcassets */; };
 		E3524A3920B9A572009CE1AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3524A3720B9A572009CE1AB /* LaunchScreen.storyboard */; };
@@ -25,10 +24,9 @@
 		E30380A120BD371600F5E545 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		E30380A320BD374D00F5E545 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		E30380A520BD3D7A00F5E545 /* DataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
-		E30380A920BD5A3600F5E545 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailTableViewController.swift; path = Detail/DetailTableViewController.swift; sourceTree = "<group>"; };
+		E30380A920BD5A3600F5E545 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		E3524A2B20B9A571009CE1AB /* itunesapi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = itunesapi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3524A2E20B9A571009CE1AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E3524A3020B9A571009CE1AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E3524A3320B9A571009CE1AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3524A3520B9A572009CE1AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3524A3820B9A572009CE1AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,8 +59,20 @@
 		E30380A820BD5A1300F5E545 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				E30380A920BD5A3600F5E545 /* DetailTableViewController.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		E30380AB20BD6C0F00F5E545 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E30380A520BD3D7A00F5E545 /* DataType.swift */,
+				F1AC6E0120BAB84B00C736EA /* HTTP.swift */,
+				F1AC6DFF20BAB64A00C736EA /* ImageDownloader.swift */,
+				F1AC6DFD20BAB57400C736EA /* UIImageExtension.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		E3524A2220B9A571009CE1AB = {
@@ -85,18 +95,13 @@
 			isa = PBXGroup;
 			children = (
 				E3524A2E20B9A571009CE1AB /* AppDelegate.swift */,
-				E3524A3020B9A571009CE1AB /* ViewController.swift */,
 				E3524A3220B9A571009CE1AB /* Main.storyboard */,
 				E3524A3520B9A572009CE1AB /* Assets.xcassets */,
 				E3524A3720B9A572009CE1AB /* LaunchScreen.storyboard */,
 				E3524A3A20B9A572009CE1AB /* Info.plist */,
-				F1AC6DFD20BAB57400C736EA /* UIImageExtension.swift */,
-				F1AC6DFF20BAB64A00C736EA /* ImageDownloader.swift */,
-				F1AC6E0120BAB84B00C736EA /* HTTP.swift */,
-				E30380A520BD3D7A00F5E545 /* DataType.swift */,
+				E30380AB20BD6C0F00F5E545 /* Base */,
 				E30380A720BD5A0400F5E545 /* List */,
 				E30380A820BD5A1300F5E545 /* Detail */,
-				E30380A920BD5A3600F5E545 /* DetailTableViewController.swift */,
 			);
 			path = itunesapi;
 			sourceTree = "<group>";
@@ -174,7 +179,6 @@
 			files = (
 				F1AC6E0220BAB84B00C736EA /* HTTP.swift in Sources */,
 				E30380A220BD371600F5E545 /* TableViewController.swift in Sources */,
-				E3524A3120B9A571009CE1AB /* ViewController.swift in Sources */,
 				E30380AA20BD5A3600F5E545 /* DetailTableViewController.swift in Sources */,
 				E3524A2F20B9A571009CE1AB /* AppDelegate.swift in Sources */,
 				F1AC6E0020BAB64A00C736EA /* ImageDownloader.swift in Sources */,
