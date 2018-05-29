@@ -12,6 +12,9 @@
 		E3524A3420B9A571009CE1AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3524A3220B9A571009CE1AB /* Main.storyboard */; };
 		E3524A3620B9A572009CE1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3524A3520B9A572009CE1AB /* Assets.xcassets */; };
 		E3524A3920B9A572009CE1AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3524A3720B9A572009CE1AB /* LaunchScreen.storyboard */; };
+		F1AC6DFE20BAB57400C736EA /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AC6DFD20BAB57400C736EA /* UIImageExtension.swift */; };
+		F1AC6E0020BAB64A00C736EA /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AC6DFF20BAB64A00C736EA /* ImageDownloader.swift */; };
+		F1AC6E0220BAB84B00C736EA /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AC6E0120BAB84B00C736EA /* HTTP.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		E3524A3520B9A572009CE1AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3524A3820B9A572009CE1AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3524A3A20B9A572009CE1AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1AC6DFD20BAB57400C736EA /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		F1AC6DFF20BAB64A00C736EA /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		F1AC6E0120BAB84B00C736EA /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				E3524A3520B9A572009CE1AB /* Assets.xcassets */,
 				E3524A3720B9A572009CE1AB /* LaunchScreen.storyboard */,
 				E3524A3A20B9A572009CE1AB /* Info.plist */,
+				F1AC6DFD20BAB57400C736EA /* UIImageExtension.swift */,
+				F1AC6DFF20BAB64A00C736EA /* ImageDownloader.swift */,
+				F1AC6E0120BAB84B00C736EA /* HTTP.swift */,
 			);
 			path = itunesapi;
 			sourceTree = "<group>";
@@ -135,8 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1AC6E0220BAB84B00C736EA /* HTTP.swift in Sources */,
 				E3524A3120B9A571009CE1AB /* ViewController.swift in Sources */,
 				E3524A2F20B9A571009CE1AB /* AppDelegate.swift in Sources */,
+				F1AC6E0020BAB64A00C736EA /* ImageDownloader.swift in Sources */,
+				F1AC6DFE20BAB57400C736EA /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
