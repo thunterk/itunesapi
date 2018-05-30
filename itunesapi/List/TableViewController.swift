@@ -73,9 +73,11 @@ class TableViewController: UITableViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let cell = sender as? UITableViewCell, let indexPath = self.tableView.indexPath(for: cell), let appId = listData?.entry[indexPath.row].id.attributes?["im:id"], let dst = segue.destination as? DetailTableViewController else {
+        guard let cell = sender as? UITableViewCell, let indexPath = self.tableView.indexPath(for: cell), let data = listData?.entry[indexPath.row], let appId = data.id.attributes?["im:id"], let dst = segue.destination as? DetailTableViewController else {
             return
         }
+        dst.title = data.name.label
+        dst.rank = (data.category.label, indexPath.row + 1)
         dst.load(appId)
     }
 

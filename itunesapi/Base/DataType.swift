@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - List Data
 struct FeedData: Codable {
     var feed: ListData
     
@@ -55,6 +56,7 @@ struct ImData: Codable {
     }
 }
 
+// MARK: - App Detail Data
 
 struct DetailData: Codable {
     var resultCount: Int
@@ -81,6 +83,8 @@ struct AppData: Codable {
     var averageUserRating: Float
     var userRatingCount: Int
     
+    var version: String
+    var currentVersionReleaseDate: String
     var releaseNotes: String?
     var trackName: String
     var trackContentRating: String
@@ -88,7 +92,6 @@ struct AppData: Codable {
     
     var fileSizeBytes: String
     var sellerUrl: String?
-    var contentAdvisoryRating: String
     var sellerName: String
     var minimumOsVersion: String
     var artistName: String
