@@ -41,11 +41,17 @@ class DetailTableViewInfoCell: DetailTableViewCell {
 }
 
 class ScreenshotCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var imageView: UIImageView?
+    @IBOutlet weak var imageView: CustomImageView?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.imageView?.layer.borderWidth = 1 / UIScreen.main.scale
         self.imageView?.layer.borderColor = UIColor.gray.cgColor
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        imageView?.cancel()
     }
 }

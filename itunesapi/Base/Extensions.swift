@@ -8,20 +8,6 @@
 
 import UIKit
 
-extension UIImageView {
-    func load(urlString: String) {
-        ImageDownloader.load(urlString: urlString) { [weak self] (image) in
-            DispatchQueue.main.async {
-                self?.image = image
-            }
-        }
-    }
-    
-    func cancel() {
-        
-    }
-}
-
 extension Int {
     func roughFormat() -> String {
         if self >= 10000 {

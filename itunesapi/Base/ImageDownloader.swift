@@ -26,6 +26,7 @@ class ImageDownloader: NSObject {
         }
     }
     
+    
     class func cancel(urlString: String) {
         
     }
@@ -47,5 +48,45 @@ class ImageCache: NSObject {
     
     class func clear() {
         cache.removeAllObjects()
+    }
+}
+
+class CustomImageView: UIImageView {
+    fileprivate static var operationQueue: [(Weak<UIImageView>, String)] = []
+    
+    fileprivate var currentUrl: String = ""
+    
+    func load(urlString: String) {
+        CustomImageView.operationQueue.append((Weak(self), urlString))
+        currentUrl = urlString
+        
+        ImageDownloader.load(urlString: urlString) { [weak self] (image) in
+            for (i, each) in CustomImageView.operationQueue.enumerated() {
+                if self != nil && each.0.value == self && urlString == each.1 {
+                    CustomImageView.operationQueue.remove(at: i)
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                    break
+                }
+            }
+        }
+    }
+    
+    func cancel() {
+        for (i, each) in CustomImageView.operationQueue.enumerated() {
+            if each.0.value == self && currentUrl == each.1 {
+                CustomImageView.operationQueue.remove(at: i)
+                break
+            }
+        }
+    }
+}
+
+
+class Weak<T: AnyObject> {
+    weak var value: T?
+    init(_ value: T) {
+        self.value = value
     }
 }

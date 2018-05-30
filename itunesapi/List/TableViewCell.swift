@@ -9,7 +9,7 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
-    @IBOutlet weak var thumbnail: UIImageView?
+    @IBOutlet weak var thumbnail: CustomImageView?
     
     @IBOutlet weak var rankLabel: UILabel?
     @IBOutlet weak var titleLabel: UILabel?
@@ -37,6 +37,12 @@ class TableViewCell: UITableViewCell {
         
         rankMinWidth?.constant = CGFloat(countDigit(number: number)) * 12
         
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        thumbnail?.cancel()
     }
 
 }

@@ -96,3 +96,4 @@ struct AppData: Codable {
     var minimumOsVersion: String
     var artistName: String
 }
+

@@ -211,7 +211,7 @@ class DetailTableViewController: UITableViewController, UICollectionViewDataSour
         }
     }
     
-    // MARK: - Collection view data source
+    // MARK: - Collection view data source (screenshots)
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return appData?.screenshotUrls.count ?? 0
     }
